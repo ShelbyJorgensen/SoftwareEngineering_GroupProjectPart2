@@ -4,92 +4,109 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>190</x>
-      <y>230</y>
+      <x>210</x>
+      <y>200</y>
       <w>210</w>
-      <h>70</h>
+      <h>110</h>
     </coordinates>
     <panel_attributes>Employee
 --
 empID : int
 --
 +getEmpID() : int
++checkAvailability() : boolean
++reserveSet() : boolean
 </panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>310</x>
-      <y>90</y>
+      <x>470</x>
+      <y>0</y>
       <w>210</w>
-      <h>70</h>
+      <h>110</h>
     </coordinates>
     <panel_attributes>Airline
 --
-name: String
+-name: String
+-location : String
 --
-+getName() : String</panel_attributes>
++getName() : String
++getLocation() : String</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>470</x>
-      <y>230</y>
+      <x>750</x>
+      <y>170</y>
       <w>210</w>
-      <h>70</h>
+      <h>150</h>
     </coordinates>
     <panel_attributes>Airplane
 --
-planeName : String
+-planeName : String
+-capacity : int
+-seatsReserved : int
+-numberOfRows : int
 --
-+getPlaneName() : String</panel_attributes>
++getPlaneName() : String
++getCapacity() : int
++seatsAvailable : boolean
+
+</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>190</x>
-      <y>370</y>
+      <x>210</x>
+      <y>390</y>
       <w>210</w>
-      <h>80</h>
+      <h>170</h>
     </coordinates>
     <panel_attributes>&lt;&lt;Customer&gt;&gt;
 --
 custID : int
+VIP : boolean
+name : String
+age : int
+flights : Flight[]
 --
-+getCustID() : int</panel_attributes>
++getCustID() : int
++isVIP : boolean
+</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>280</x>
-      <y>290</y>
+      <x>300</x>
+      <y>300</y>
       <w>30</w>
-      <h>100</h>
+      <h>110</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
-    <additional_attributes>10.0;10.0;10.0;80.0</additional_attributes>
+    <additional_attributes>10.0;10.0;10.0;90.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>160</x>
-      <y>440</y>
+      <x>170</x>
+      <y>550</y>
       <w>200</w>
       <h>100</h>
     </coordinates>
     <panel_attributes>lt=&lt;.
 &lt;&lt;instanceOfCustomer&gt;&gt;</panel_attributes>
-    <additional_attributes>60.0;10.0;10.0;80.0</additional_attributes>
+    <additional_attributes>70.0;10.0;10.0;80.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>360</x>
-      <y>440</y>
+      <x>380</x>
+      <y>550</y>
       <w>200</w>
       <h>100</h>
     </coordinates>
@@ -100,8 +117,8 @@ custID : int
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>60</x>
-      <y>520</y>
+      <x>70</x>
+      <y>630</y>
       <w>210</w>
       <h>70</h>
     </coordinates>
@@ -115,10 +132,10 @@ custID : int
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>340</x>
-      <y>520</y>
+      <x>350</x>
+      <y>630</y>
       <w>210</w>
-      <h>70</h>
+      <h>160</h>
     </coordinates>
     <panel_attributes>Reg_Customer
 --
@@ -130,23 +147,120 @@ custID : int
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>300</x>
-      <y>150</y>
-      <w>90</w>
-      <h>100</h>
+      <x>320</x>
+      <y>100</y>
+      <w>230</w>
+      <h>120</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
-    <additional_attributes>70.0;10.0;10.0;80.0</additional_attributes>
+    <additional_attributes>210.0;10.0;10.0;100.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>470</x>
-      <y>150</y>
-      <w>90</w>
-      <h>100</h>
+      <x>630</x>
+      <y>100</y>
+      <w>210</w>
+      <h>90</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
-    <additional_attributes>10.0;10.0;70.0;80.0</additional_attributes>
+    <additional_attributes>10.0;10.0;190.0;70.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>740</x>
+      <y>380</y>
+      <w>210</w>
+      <h>180</h>
+    </coordinates>
+    <panel_attributes>Seat
+--
+-seatNum : int
+-seatReserved : boolean
+-rowNum : int
+-class : String
+--
++getSeatNum() : int
++getRowNum() : int
++isReserved() : boolean
++reserve() : boolean
++getClass() : String</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>850</x>
+      <y>310</y>
+      <w>30</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;70.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>480</x>
+      <y>260</y>
+      <w>210</w>
+      <h>140</h>
+    </coordinates>
+    <panel_attributes>Flight
+--
+flightNum : int
+destination : String
+--
++getDestination : String
++setDestination : void
++getFlightNum : int
++setFlightNum : void
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>680</x>
+      <y>360</y>
+      <w>80</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;60.0;60.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>680</x>
+      <y>270</y>
+      <w>90</w>
+      <h>50</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;30.0;70.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>410</x>
+      <y>270</y>
+      <w>90</w>
+      <h>50</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>70.0;30.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>410</x>
+      <y>360</y>
+      <w>90</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>70.0;10.0;10.0;70.0</additional_attributes>
   </element>
 </diagram>
